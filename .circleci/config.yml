@@ -2,8 +2,8 @@ version: 2
 jobs:
   build:
     branches:
-       only:
-         -Assignment5
+        only:
+          -Assignment5
     docker:
       - image: circleci/python:2.7-jessie
     steps:
@@ -29,4 +29,4 @@ jobs:
             ./packer build \
             -var "aws_region=${AWS_REGION}" \
             -var "subnet_id=${AWS_SUBNET_ID}" \
-                                             ubuntu-ami-template.json
+            ubuntu-ami-template.json
