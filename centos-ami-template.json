@@ -42,7 +42,16 @@
         "sudo yum update -y",
         "sudo yum install tomcat -y",
         "sudo yum install tomcat-webapps -y",
-        "sudo systemctl enable tomcat"
+        "sudo systemctl enable tomcat",
+	"sudo yum install ruby -y",
+        "sudo yum install wget -y",
+        "cd /home/centos",
+        "sudo wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install",
+        "sudo chmod +x ./install",
+        "sudo ./install auto",
+        "sudo service codedeploy-agent stop",
+        "sudo service codedeploy-agent start",
+        "sudo service codedeploy-agent status"
       ]
     }
   ]
