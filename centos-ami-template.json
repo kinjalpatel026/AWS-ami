@@ -33,26 +33,14 @@
     }
   ],
   "provisioners": [
-    {
-      "type": "shell",
-      "environment_vars": [
-        "FOO=foo"
-      ],
-      "inline": [
-        "sudo yum update -y",
-        "sudo yum install tomcat -y",
-        "sudo yum install tomcat-webapps -y",
-        "sudo systemctl enable tomcat",
-	"sudo yum install ruby -y",
-        "sudo yum install wget -y",
-        "cd /home/centos",
-        "sudo wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install",
-        "sudo chmod +x ./install",
-        "sudo ./install auto",
-        "sudo service codedeploy-agent stop",
-        "sudo service codedeploy-agent start",
-        "sudo service codedeploy-agent status"
-      ]
-    }
-  ]
+        {   "type": "shell",
+            "environment_vars": [
+                "JAVA_HOME=lib/jvm/java-1.8.0-openjdk"
+            ],
+            "execute_command": "echo 'centos' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
+            "scripts": [
+                "install.sh"
+            ]
+        }
+    ]
 }
