@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+yum install -y wget
 cd /tmp
 wget https://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm
 rpm -ivh mysql57-community-release-el7-9.noarch.rpm
@@ -9,7 +10,6 @@ yum install -y maven
 systemctl start mysqld
 yum -y update
 yum install -y ruby
-yum install -y wget
 wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install
 chmod +x ./install
 ./install auto
