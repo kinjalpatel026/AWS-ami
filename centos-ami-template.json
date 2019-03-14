@@ -39,16 +39,68 @@
         "FOO=foo"
       ],
       "inline": [
-        "sudo yum update -y",
-        "sudo yum install ruby -y",
-        "sudo yum install wget -y",
-        "cd /home/centos",
-        "sudo wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install",
-        "sudo chmod +x ./install",
-        "sudo ./install auto",
-        "sudo service codedeploy-agent stop",
-        "sudo service codedeploy-agent start",
-        "sudo service codedeploy-agent status"
+      {
+    "variables": {
+        "source_ami": "ami-9887c6e7",
+        "ssh_username":"centos",
+	"aws_region":"us-east-1"
+    },
+    "builders": [
+        {
+            "type": "amazon-ebs",
+            "region": "{{user `aws_region`}}",
+            "instance_type": "t2.micro",
+            "source_ami": "{{user `source_ami`}}",
+            "ssh_username": "{{user `ssh_username`}}",
+            "ami_name": "csye6225_{{timestamp}}",
+            "ami_description": "CentOS AMI for CSYE 6225 - Spring 2019",
+            "launch_block_device_mappings": [
+                {
+                    "device_name": "/dev/sda1",
+                    "volume_size": 8,
+                    "volume_type": "gp2",
+                    "delete_on_termination": true
+                }
+            ]
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "environment_vars": [
+                "JAVA_HOME=lib/jvm/java-1.8.0-openjdk"
+            ],
+            "inline": [
+                "sudo yum install java-1.8.0-openjdk.x86_64 -y",
+                "java -version",
+                "mkdir ~/downloads",
+                "cd ~/downloads/",
+                "sudo yum install -y wget",
+                "wget https://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm",
+                "sudo rpm -ivh mysql57-community-release-el7-9.noarch.rpm",
+                "sudo yum install -y mysql-server",
+                "sudo yum install -y tomcat",
+                "sudo yum install -y tomcat-webapps tomcat-docs-webapp tomcat-admin-webapps",
+                "sudo yum -y install tomcat tomcat-webapps tomcat-admin-webapps",
+                "sudo yum install -y mysql",
+                "sudo yum install -y maven",
+                "sudo systemctl start tomcat.service",
+                "sudo systemctl status tomcat.service",
+                "sudo systemctl start mysqld",
+                "sudo systemctl status mysqld",
+                "sudo yum -y update",
+                "sudo yum install -y ruby",
+                "sudo yum install -y wget",
+                "wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install",
+                "chmod +x ./install",
+                "sudo ./install auto",
+                "sudo service codedeploy-agent status",
+                "sudo service codedeploy-agent start",
+                "sudo service codedeploy-agent status"
+            ]
+        }
+    ]
+}
       ]
     }
   ]
