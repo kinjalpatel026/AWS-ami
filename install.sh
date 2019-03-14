@@ -9,6 +9,7 @@ yum install -y maven
 systemctl start mysqld
 yum -y update
 yum install -y ruby
+yum install -y wget
 wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install
 chmod +x ./install
 ./install auto
