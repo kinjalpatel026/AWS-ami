@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90d2e15d-8864-41dd-9456-041742cafa74" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/install.sh" afterDir="false" />
-    </list>
+    <list default="true" id="90d2e15d-8864-41dd-9456-041742cafa74" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,16 +124,15 @@
       <workItem from="1550533720299" duration="28212000" />
       <workItem from="1550695597485" duration="1415000" />
       <workItem from="1552608204916" duration="20000" />
-      <workItem from="1552610792249" duration="71000" />
+      <workItem from="1552610792249" duration="668000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30653000" />
+    <option name="totallyTimeSpent" value="31250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
