@@ -28,19 +28,19 @@
         }
       ],
       "tags" : {
-         "Name" : "csye6225-CentOs"
+        "Name" : "csye6225-CentOs"
       }
     }
   ],
   "provisioners": [
-        {   "type": "shell",
-            "environment_vars": [
-                "JAVA_HOME=lib/jvm/java-1.8.0-openjdk"
-            ],
-            "execute_command": "echo 'centos' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
-            "scripts": [
-                "install.sh"
-            ]
-        }
-    ]
+    {   "type": "shell",
+      "environment_vars": [
+        "JAVA_HOME=lib/jvm/java-1.8.0-openjdk"
+      ],
+      "execute_command": "echo 'centos' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
+      "scripts": [
+        "install.sh"
+      ]
+    }
+  ]
 }
