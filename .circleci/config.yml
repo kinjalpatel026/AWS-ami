@@ -1,5 +1,6 @@
 version: 2
 jobs:
+
   build:
     docker:
       - image: circleci/python:2.7-jessie
@@ -24,7 +25,8 @@ jobs:
           name: Build AMI
           command: |
             ./packer build \
-            -var "aws_region=${AWS_REGION}" \
-            -var "subnet_id=${AWS_SUBNET_ID}" \
             centos-ami-template.json
+
+
+
 

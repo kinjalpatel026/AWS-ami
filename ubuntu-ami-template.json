@@ -36,7 +36,7 @@
                 "FOO=foo"
             ],
             "inline": [
-                "sudo apt-get update",
+                "sudo apt-get update -y",
                 "sudo apt-get install tomcat8 tomcat8-docs tomcat8-examples tomcat8-admin apache2 -y"
             ]
         }
