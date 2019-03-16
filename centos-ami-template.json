@@ -28,21 +28,18 @@
         }
       ],
       "tags" : {
-         "Name" : "csye6225-CentOs"
+        "Name" : "csye6225-CentOs"
       }
     }
   ],
   "provisioners": [
-    {
-      "type": "shell",
+    {   "type": "shell",
       "environment_vars": [
-        "FOO=foo"
+        "JAVA_HOME=lib/jvm/java-1.8.0-openjdk"
       ],
-      "inline": [
-        "sudo yum update -y",
-        "sudo yum install tomcat -y",
-        "sudo yum install tomcat-webapps -y",
-        "sudo systemctl enable tomcat"
+      "execute_command": "echo 'centos' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
+      "scripts": [
+        "install.sh"
       ]
     }
   ]

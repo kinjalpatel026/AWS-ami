@@ -19,11 +19,13 @@ jobs:
             chmod +x packer
       - run:
           name: Validate Packer Template
-          command: ./packer validate ubuntu-ami-template.json
+
+          command: ./packer validate centos-ami-template.json
       - run:
           name: Build AMI
           command: |
             ./packer build \
             -var "aws_region=${AWS_REGION}" \
-            -var "subnet_id=${AWS_SUBNET_ID}" \
-            ubuntu-ami-template.json
+            -var "subnet_id=${AWS_SUBNET_ID}"\ 
+            centos-ami-template.json
+
