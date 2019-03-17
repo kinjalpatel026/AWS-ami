@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="90d2e15d-8864-41dd-9456-041742cafa74" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
 =======
     <list default="true" id="90d2e15d-8864-41dd-9456-041742cafa74" name="Default Changelist" comment="" />
 >>>>>>> 0cc230851f4f259617ad79455d667a690e5b1b60
+=======
+    <list default="true" id="90d2e15d-8864-41dd-9456-041742cafa74" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/install.sh" afterDir="false" />
+    </list>
+>>>>>>> f4c2065232d4667b65c5af66f995f33cf6953e48
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/install.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
+            <state relative-caret-position="139">
+              <caret line="33" column="34" lean-forward="true" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -71,7 +78,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="1" />
     <option name="y" value="25" />
     <option name="width" value="799" />
@@ -82,7 +89,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -100,6 +106,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -139,26 +146,36 @@
 =======
       <workItem from="1552608204916" duration="20000" />
       <workItem from="1552610792249" duration="668000" />
+<<<<<<< HEAD
 >>>>>>> 0cc230851f4f259617ad79455d667a690e5b1b60
+=======
+      <workItem from="1552770086162" duration="17000" />
+      <workItem from="1552780620803" duration="726000" />
+>>>>>>> f4c2065232d4667b65c5af66f995f33cf6953e48
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="30250000" />
 =======
     <option name="totallyTimeSpent" value="31250000" />
 >>>>>>> 0cc230851f4f259617ad79455d667a690e5b1b60
+=======
+    <option name="totallyTimeSpent" value="31993000" />
+>>>>>>> f4c2065232d4667b65c5af66f995f33cf6953e48
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="67" y="25" width="733" height="575" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.15882678" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.426492" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
@@ -215,9 +232,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/install.sh">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="645">
           <caret line="43" selection-start-line="43" selection-end-line="43" />
 >>>>>>> 0cc230851f4f259617ad79455d667a690e5b1b60
+=======
+        <state relative-caret-position="139">
+          <caret line="33" column="34" lean-forward="true" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+>>>>>>> f4c2065232d4667b65c5af66f995f33cf6953e48
         </state>
       </provider>
     </entry>
