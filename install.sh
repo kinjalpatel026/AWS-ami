@@ -3,8 +3,8 @@
 yum install java-1.8.0-openjdk.x86_64 -y
 yum install -y wget
 cd /tmp
-wget https://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm
-rpm -ivh mysql57-community-release-el7-9.noarch.rpm
+sudo wget https://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm
+sudo rpm -ivh mysql57-community-release-el7-9.noarch.rpm
 yum install -y mysql-server
 yum install -y mysql
 yum install -y maven
@@ -12,7 +12,7 @@ systemctl start mysqld
 yum -y update
 yum install -y ruby
 wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install
-chmod +x ./install
+sudo chmod +x ./install
 ./install auto
 service codedeploy-agent status
 service codedeploy-agent start
@@ -23,10 +23,11 @@ sleep 10
 mkdir /opt/tomcat
 wget -q --no-cookies -S "http://www.trieuvan.com/apache/tomcat/tomcat-9/v9.0.16/bin/apache-tomcat-9.0.16.tar.gz"
 tar -xf apache-tomcat-9.0.16.tar.gz
-mv apache-tomcat-9.0.16/ /opt/tomcat/
-echo "export CATALINA_HOME='/opt/tomcat/'" >> ~/.bashrc
-useradd -r tomcat --shell /bin/false
-chown -R tomcat:tomcat /opt/tomcat/
+sudo mv apache-tomcat-9.0.16/ /opt/tomcat/
+sudo chmod 777 ~/.bashrc
+echo "export CATALINA_HOME='/opt/tomcat/apache-tomcat-9.0.16/'" >> ~/.bashrc
+sudo useradd -r tomcat --shell /bin/false
+sudo chown -R tomcat:tomcat /opt/tomcat/
 cat > /etc/systemd/system/tomcat.service << EOF
 [Unit]
 Description= Tomcat 9
@@ -41,4 +42,7 @@ Environment=CATALINA_HOME=/opt/tomcat/apache-tomcat-9.0.16
 Environment=CATALINA_BASE=/opt/tomcat/apache-tomcat-9.0.16
 Environment='JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd:/dev/./urandom'
 ExecStart=/opt/tomcat/apache-tomcat-9.0.16/bin/startup.sh
+Restart=on-failure
+[Install]
+wantedBy=multi-user.target
 EOF
