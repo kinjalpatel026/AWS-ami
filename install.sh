@@ -28,6 +28,13 @@ sudo chmod 777 ~/.bashrc
 echo "export CATALINA_HOME='/opt/tomcat/apache-tomcat-9.0.16/'" >> ~/.bashrc
 sudo useradd -r tomcat --shell /bin/false
 sudo chown -R tomcat:tomcat /opt/tomcat/
+echo # Download Agent"
+wget https://s3.amazonaws.com/amazoncloudwatch-agent/centos/amd64/latest/amazon-cloudwatch-agent.rpm
+echo # Install Package
+rpm -U ./amazon-cloudwatch-agent.rpm
+systemctl daemon-reload
+systemctl start cloudwatch.service
+systemctl enable cloudwatch.service
 cat > /etc/systemd/system/tomcat.service << EOF
 [Unit]
 Description= Tomcat 9
