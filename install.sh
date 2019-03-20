@@ -22,8 +22,8 @@ service codedeploy-agent status
 sleep 10
 mkdir /opt/tomcat
 wget -q --no-cookies -S "http://www.trieuvan.com/apache/tomcat/tomcat-9/v9.0.17/bin/apache-tomcat-9.0.17.tar.gz"
-tar -xf apache-tomcat-9.0.16.tar.gz
-sudo mv apache-tomcat-9.0.16/ /opt/tomcat/
+tar -xf apache-tomcat-9.0.17.tar.gz
+sudo mv apache-tomcat-9.0.17/ /opt/tomcat/
 sudo chmod 777 ~/.bashrc
 echo "export CATALINA_HOME='/opt/tomcat/apache-tomcat-9.0.16/'" >> ~/.bashrc
 sudo useradd -r tomcat --shell /bin/false
@@ -44,9 +44,9 @@ User=tomcat
 Group=tomcat
 Type=forking
 Environment=JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk
-Environment=CATALINA_PID=/opt/tomcat/apache-tomcat-9.0.16/temp/tomcat.pid
-Environment=CATALINA_HOME=/opt/tomcat/apache-tomcat-9.0.16
-Environment=CATALINA_BASE=/opt/tomcat/apache-tomcat-9.0.16
+Environment=CATALINA_PID=/opt/tomcat/apache-tomcat-9.0.17/temp/tomcat.pid
+Environment=CATALINA_HOME=/opt/tomcat/apache-tomcat-9.0.17
+Environment=CATALINA_BASE=/opt/tomcat/apache-tomcat-9.0.17
 Environment='JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd:/dev/./urandom'
-ExecStart=/opt/tomcat/apache-tomcat-9.0.16/bin/startup.sh
+ExecStart=/opt/tomcat/apache-tomcat-9.0.17/bin/startup.sh
 EOF
