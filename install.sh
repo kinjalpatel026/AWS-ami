@@ -33,8 +33,6 @@ wget https://s3.amazonaws.com/amazoncloudwatch-agent/centos/amd64/latest/amazon-
 echo # Install Package
 rpm -U ./amazon-cloudwatch-agent.rpm
 systemctl daemon-reload
-systemctl start cloudwatch.service
-systemctl enable cloudwatch.service
 cat > /etc/systemd/system/tomcat.service << EOF
 [Unit]
 Description= Tomcat 9
