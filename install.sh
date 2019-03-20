@@ -21,7 +21,7 @@ service codedeploy-agent status
 
 sleep 10
 mkdir /opt/tomcat
-wget -q --no-cookies -S "http://www.trieuvan.com/apache/tomcat/tomcat-9/v9.0.16/bin/apache-tomcat-9.0.16.tar.gz"
+wget -q --no-cookies -S "http://www.trieuvan.com/apache/tomcat/tomcat-9/v9.0.17/bin/apache-tomcat-9.0.17.tar.gz"
 tar -xf apache-tomcat-9.0.16.tar.gz
 sudo mv apache-tomcat-9.0.16/ /opt/tomcat/
 sudo chmod 777 ~/.bashrc
