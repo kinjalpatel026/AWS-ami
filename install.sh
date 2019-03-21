@@ -21,13 +21,19 @@ service codedeploy-agent status
 
 sleep 10
 mkdir /opt/tomcat
-wget -q --no-cookies -S "http://www.trieuvan.com/apache/tomcat/tomcat-9/v9.0.16/bin/apache-tomcat-9.0.16.tar.gz"
-tar -xf apache-tomcat-9.0.16.tar.gz
-sudo mv apache-tomcat-9.0.16/ /opt/tomcat/
+wget -q --no-cookies -S "http://www.trieuvan.com/apache/tomcat/tomcat-9/v9.0.17/bin/apache-tomcat-9.0.17.tar.gz"
+tar -xf apache-tomcat-9.0.17.tar.gz
+sudo mv apache-tomcat-9.0.17/ /opt/tomcat/
 sudo chmod 777 ~/.bashrc
-echo "export CATALINA_HOME='/opt/tomcat/apache-tomcat-9.0.16/'" >> ~/.bashrc
+echo "export CATALINA_HOME='/opt/tomcat/apache-tomcat-9.0.17/'" >> ~/.bashrc
 sudo useradd -r tomcat --shell /bin/false
 sudo chown -R tomcat:tomcat /opt/tomcat/
+echo # Download Agent"
+wget https://s3.amazonaws.com/amazoncloudwatch-agent/centos/amd64/latest/amazon-cloudwatch-agent.rpm
+echo # Install Package
+rpm -U ./amazon-cloudwatch-agent.rpm
+systemctl daemon-reload
+sudo systemctl enable amazon-cloudwatch-agent
 cat > /etc/systemd/system/tomcat.service << EOF
 [Unit]
 Description= Tomcat 9
@@ -37,9 +43,14 @@ User=tomcat
 Group=tomcat
 Type=forking
 Environment=JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk
-Environment=CATALINA_PID=/opt/tomcat/apache-tomcat-9.0.16/temp/tomcat.pid
-Environment=CATALINA_HOME=/opt/tomcat/apache-tomcat-9.0.16
-Environment=CATALINA_BASE=/opt/tomcat/apache-tomcat-9.0.16
+Environment=CATALINA_PID=/opt/tomcat/apache-tomcat-9.0.17/temp/tomcat.pid
+Environment=CATALINA_HOME=/opt/tomcat/apache-tomcat-9.0.17
+Environment=CATALINA_BASE=/opt/tomcat/apache-tomcat-9.0.17
 Environment='JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd:/dev/./urandom'
+<<<<<<< HEAD
 ExecStart=/opt/tomcat/apache-tomcat-9.0.16/bin/startup.sh
 EOF
+=======
+ExecStart=/opt/tomcat/apache-tomcat-9.0.17/bin/startup.sh
+EOF
+>>>>>>> 7d50725285e3cc9e819b995a996e7a8b7749cf63
