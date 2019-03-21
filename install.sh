@@ -25,7 +25,7 @@ wget -q --no-cookies -S "http://www.trieuvan.com/apache/tomcat/tomcat-9/v9.0.17/
 tar -xf apache-tomcat-9.0.17.tar.gz
 sudo mv apache-tomcat-9.0.17/ /opt/tomcat/
 sudo chmod 777 ~/.bashrc
-echo "export CATALINA_HOME='/opt/tomcat/apache-tomcat-9.0.16/'" >> ~/.bashrc
+echo "export CATALINA_HOME='/opt/tomcat/apache-tomcat-9.0.17/'" >> ~/.bashrc
 sudo useradd -r tomcat --shell /bin/false
 sudo chown -R tomcat:tomcat /opt/tomcat/
 echo # Download Agent"
@@ -33,6 +33,7 @@ wget https://s3.amazonaws.com/amazoncloudwatch-agent/centos/amd64/latest/amazon-
 echo # Install Package
 rpm -U ./amazon-cloudwatch-agent.rpm
 systemctl daemon-reload
+sudo systemctl enable amazon-cloudwatch-agent
 cat > /etc/systemd/system/tomcat.service << EOF
 [Unit]
 Description= Tomcat 9
